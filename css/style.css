@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-image: url(../images/blueprint_bkgd_lessblur.jpg);
+	background-size: cover;
+	background-repeat:no-repeat;
+	color: #666;
+	font-family: Myriad Pro, Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	margin:0px;	
+}
+
+a:link {color:black; text-decoration:none; }
+a:visited {color:red; text-decoration:underline; }
+a:hover {color:grey; text-decoration:underline; }
+a:active {color:black; text-decoration:none; }
+
+
+
+#wrapper {
+	width: 900px;
+	height: auto;
+	margin:0px auto;
+}
+
+#header {
+	width: 860px;
+	height: 70px;
+	background-color: white;
+	margin-top: 24px;
+	padding: 20px 20px 10px 20px;
+    box-shadow: 4px 5px 5px #999; 
+}
+  
+#loginmain  {
+	
+	width: 500px;
+	height: auto;
+	text-align: right;
+	float: right;
+	
+}
+	
+  
+#header2 {
+	width: 860px;
+	height: 70px;
+	margin-top: 24px;
+	padding: 20px 20px 10px 20px;
+ 
+}
+	
+	#navbar {
+	width:900px;
+	height: 60px;
+	
+	}
+	
+
+#maincontent {
+	width: 900px;
+	height: auto;
+	background-color: #FFFFFF;
+	margin-top: 24px;
+	box-shadow: 4px 5px 5px #999999;
+	margin-bottom: 10px;
+}
+
+#top_image {
+	width: 900px;
+	height: 350px;
+	background-image: url(../images/blue_sky_green_grass-wide_mod.jpg);
+}
+
+#leftcolumn {
+	width: 270px;
+	height: auto;
+	padding: 5px 15px 15px 15px;
+	background-color:#FFF;
+	float: left;
+	
+}
+
+#middlecolumn {
+	width: 270px;
+	height: auto;
+	padding: 5px 15px 15px 15px;
+	background-color:#FFF;
+	float: left;
+}
+
+#rightcolumn {
+	width: 270px;
+	height: auto;
+	padding: 5px 15px 15px 15px;
+	background-color:#FFF;
+	float:right;
+	
+}
+
+
+#double-right-column {
+	width: 570px;
+	height: auto;
+	padding: 5px 15px 15px 15px;
+	background-color:#FFF;
+	float:right;
+	
+}
+
+
+#footer {
+	width: 870px;
+	height: 24px;
+	background-color: white;
+	text-size: 6px;
+	padding-left: 15px;
+	padding-right: 15px;
+	clear:both;
+	margin-bottom: 10px;
+	
+}
+
+
+.floatleft  {
+	float: left;
+	padding-right: 14px;	
+}
+
+.floatright  {
+	float: right;	
+}
+
+.padright12  {
+	padding-right:12px;	
+}
+
+.padtop12  {
+	padding-top: 12px;
+}
+
