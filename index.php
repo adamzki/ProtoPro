@@ -1,37 +1,28 @@
 <?php
 include('login_check.php');
-
 //$_SESSION = array();
 //session_destroy();
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ProtoPro Community Site</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
-<script type="text/javascript">
-function MM_effectAppearFade(targetElement, duration, from, to, toggle)
-{
-	Spry.Effect.DoFade(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
-}
-</script>
-
-<script src="slideshow/lightbox/jquery-1.7.2.min.js"></script>
-<script src="slideshow/lightbox/lightbox.js"></script>
-
-<link href="slideshow/lightbox/lightbox.css" rel="stylesheet" type="text/css" />
-
-
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ProtoPro Community Site</title>
+      <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        function MM_effectAppearFade(targetElement, duration, from, to, toggle)
+        {
+        	Spry.Effect.DoFade(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
+        }
+        </script>
+        <script src="slideshow/lightbox/jquery-1.7.2.min.js"></script>
+        <script src="slideshow/lightbox/lightbox.js"></script>
+      <link href="slideshow/lightbox/lightbox.css" rel="stylesheet" type="text/css" />
 </head>
 
-
 <body>
-
-
 <div id="wrapper">
   <div id="header"><a href="index.html"><img src="images/logo.png" /></a>
     <div id="loginmain">
