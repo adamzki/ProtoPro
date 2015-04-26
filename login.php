@@ -1,3 +1,4 @@
+<?php include'template.php'; ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,22 +20,16 @@
   <a href="index.html"><img src="images/logo.png" width="225" height="50" border="0" /></a>
 </center></div>
 
-<div id="navbar"><table width="900" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="301" align="center"><h2><a href="#">Upload</a></h2></td>
-    <td width="296" align="center"><h2><a href="index.html">Home</a></h2></td>
-    <td width="303" align="center"><h2><a href="http://www.google.com" target="_blank">Forum</a></h2></td>
-  </tr>
-</table>
-</div>
-
+<?php
+echo $navigation;
+?>
 
 
 
 <div id="maincontent">
   
 <div id="leftcolumn">
-  <h3>Welcome, SessionName!</h3>
+  <h3>Welcome, <?php echo $_SESSION['Fname'] ?>!</h3>
  <center> 
    <p><img src="images/tn_airplane.jpg" width="72" height="72" class="padtop12" /><br />
      Air</p>

@@ -1,7 +1,5 @@
 <?php
-include('login_check.php');
-//$_SESSION = array();
-//session_destroy();
+include'template.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -29,12 +27,10 @@ include('login_check.php');
       <a href="#" target="_blank">Forgot password?</a>
         <form name="login" actions="index.php" method="post">
           <input type="text" name="Email" placeholder="Email" />
-          <input type="text" name="Password" placeholder="Password" />
+          <input type="password" name="Password" placeholder="Password" />
           <input type="submit" name="submit_login" value="Login" />
         </form>
         <?php
-
-$mysqli = new mysqli("localhost", "root", "", "protopro");
 
 if (isset($_POST['Email'])) {
   $query = <<<END
@@ -45,8 +41,8 @@ END;
 $res = $mysqli->query($query);
   if ($res->num_rows > 0) {
     $row = $res->fetch_object();
-    $_SESSION["Fname"] = $row->Email;
-    $_SESSION["Userid"] = $row->id;
+    $_SESSION["Fname"] = $row->Fname;
+    $_SESSION["Userid"] = $row->Userid;
     header("Location:login.php");
   }else{
     echo "Fel användarnamn eller lösenord.";
@@ -89,7 +85,7 @@ if(isset($_POST['Email']))
   VALUES ('{$_POST['Fname']}','{$_POST['Lname']}','{$_POST['Email']}','{$_POST['Password2']}')
 END;
 $mysqli->query($query);
-header('Location:forum.html');
+header('Location:login.php');
 }
 
 ?>
