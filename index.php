@@ -27,11 +27,33 @@ include('login_check.php');
   <div id="header"><a href="index.html"><img src="images/logo.png" /></a>
     <div id="loginmain">
       <a href="#" target="_blank">Forgot password?</a>
-        <form name="login" actions="login_check.php" method="post">
+        <form name="login" actions="index.php" method="post">
           <input type="text" name="Email" placeholder="Email" />
           <input type="text" name="Password" placeholder="Password" />
           <input type="submit" name="submit_login" value="Login" />
         </form>
+        <?php
+
+$mysqli = new mysqli("localhost", "root", "", "protopro");
+
+if (isset($_POST['Email'])) {
+  $query = <<<END
+  SELECT Email, Password, Fname, Userid FROM users
+  WHERE Email = '{$_POST['Email']}'
+  AND Password = '{$_POST['Password']}'
+END;
+$res = $mysqli->query($query);
+  if ($res->num_rows > 0) {
+    $row = $res->fetch_object();
+    $_SESSION["Fname"] = $row->Email;
+    $_SESSION["Userid"] = $row->id;
+    header("Location:login.php");
+  }else{
+    echo "Fel användarnamn eller lösenord.";
+  }
+}
+
+?>
     </div>
 
 <!--Hej på dig-->
@@ -47,8 +69,8 @@ include('login_check.php');
 
     <div id="middlecolumn">
       <h2>Sign up!</h2>
-        <a href="www.google.se" rel="lightbox[kristian]" title="car prototype"><p>sign up</p></a>
-          <form name="new_user" actions="new_user.php" method="post">
+        <p>Not a registerd user yet? Do not despair, just fill out this simple form to get started!</p>
+          <form name="new_user" actions="index.php" method="post">
             <input type="text" name="Fname" placeholder="First Name" />
             <input type="text" name="Lname" placeholder="Last Name" />
             <input type="text" name="Email" placeholder="Email" />
@@ -56,6 +78,21 @@ include('login_check.php');
             <br>
             <input type="submit" name="submit_reg" value="Sign up!" /> 
           </form>
+          <?php
+
+$mysqli = new mysqli("localhost", "root", "", "protopro");
+
+if(isset($_POST['Email']))  
+{
+  $query = <<<END
+  INSERT INTO users(Fname,Lname,Email,Password)
+  VALUES ('{$_POST['Fname']}','{$_POST['Lname']}','{$_POST['Email']}','{$_POST['Password2']}')
+END;
+$mysqli->query($query);
+header('Location:forum.html');
+}
+
+?>
        </div>
 
      <div id="rightcolumn">
