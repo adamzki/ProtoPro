@@ -6,8 +6,8 @@ session_start();
 $navigation = <<<END
 <div id="navbar"><table width="900" border="0" cellspacing="0" cellpadding="0">
 	<tr>
-    <td width="301" align="center"><h2><a href="#">Upload</a></h2></td>
-    <td width="296" align="center"><h2><a href="login.php">Home</a></h2></td>
+    <td width="301" align="center"><h2><a href="upload.php">My Page</a></h2></td>
+    <td width="296" align="center"><h2><a href="login.php">Prototypes</a></h2></td>
     <td width="303" align="center"><h2><a href="forum.php">Forum</a></h2></td>
 
 
