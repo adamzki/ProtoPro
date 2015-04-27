@@ -9,20 +9,20 @@ include'template.php';
     <title>ProtoPro Community Site</title>
       <link href="css/style.css" rel="stylesheet" type="text/css" />
         <script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
-        <script type="text/javascript">
-        function MM_effectAppearFade(targetElement, duration, from, to, toggle)
-        {
-        	Spry.Effect.DoFade(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
-        }
-        </script>
-        <script src="slideshow/lightbox/jquery-1.7.2.min.js"></script>
+            <script type="text/javascript">
+            function MM_effectAppearFade(targetElement, duration, from, to, toggle)
+            {
+            	Spry.Effect.DoFade(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
+            }
+            </script>
+          <script src="slideshow/lightbox/jquery-1.7.2.min.js"></script>
         <script src="slideshow/lightbox/lightbox.js"></script>
       <link href="slideshow/lightbox/lightbox.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <div id="wrapper">
-  <div id="header"><a href="index.html"><img src="images/logo.png" /></a>
+  <div id="header"><a href="index.php"><img src="images/logo.png" /></a>
     <div id="loginmain">
       <a href="#" target="_blank">Forgot password?</a>
         <form name="login" actions="index.php" method="post">
@@ -48,11 +48,8 @@ $res = $mysqli->query($query);
     echo "Fel användarnamn eller lösenord.";
   }
 }
-
 ?>
     </div>
-
-<!--Hej på dig-->
 </div>
 
 <div id="maincontent">
@@ -71,10 +68,10 @@ $res = $mysqli->query($query);
             <input type="text" name="Lname" placeholder="Last Name" />
             <input type="text" name="Email" placeholder="Email" />
             <input type="text" name="Password2" placeholder="Password" />
-            <br>
-            <input type="submit" name="submit_reg" value="Sign up!" /> 
-          </form>
-          <?php
+           <br>
+         <input type="submit" name="submit_reg" value="Sign up!" /> 
+       </form>
+      <?php
 
 $mysqli = new mysqli("localhost", "root", "", "protopro");
 
