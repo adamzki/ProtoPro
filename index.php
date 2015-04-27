@@ -62,30 +62,6 @@ $res = $mysqli->query($query);
 
     <div id="middlecolumn">
       <h2>Sign up!</h2>
-        <p>Not a registerd user yet? Do not despair, just fill out this simple form to get started!</p>
-          <form name="new_user" actions="index.php" method="post">
-            <input type="text" name="Fname" placeholder="First Name" />
-            <input type="text" name="Lname" placeholder="Last Name" />
-            <input type="text" name="Email" placeholder="Email" />
-            <input type="text" name="Password2" placeholder="Password" />
-           <br>
-         <input type="submit" name="submit_reg" value="Sign up!" /> 
-       </form>
-      <?php
-
-$mysqli = new mysqli("localhost", "root", "", "protopro");
-
-if(isset($_POST['Email']))  
-{
-  $query = <<<END
-  INSERT INTO users(Fname,Lname,Email,Password)
-  VALUES ('{$_POST['Fname']}','{$_POST['Lname']}','{$_POST['Email']}','{$_POST['Password2']}')
-END;
-$mysqli->query($query);
-header('Location:login.php');
-}
-
-?>
        </div>
 
      <div id="rightcolumn">
