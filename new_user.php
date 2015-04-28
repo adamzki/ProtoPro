@@ -14,29 +14,42 @@
 <div id="maincontent">
 	<div id="leftcolumn">
 		<h2>New to ProtoPro? Register below!</h2>
-		<form name="new_user" actions="index.php" method="post">
+		<form class="register_form" name="new_user" actions="index.php" method="post">
         <input type="text" name="Fname" placeholder="First Name">
         <input type="text" name="Lname" placeholder="Last Name">
         <input type="text" name="Email" placeholder="Email">
-        <input type="text" name="Password" placeholder="Password">
+        <input type="password" name="Password" placeholder="Password">
         <br>
         <input type="submit" name="submit_reg" value="Sign up!" /> 
        	</form>
        	<?php
 
-$mysqli = new mysqli("localhost", "root", "", "protopro");
+
 
 if(isset($_POST['Email']) && ($_POST['Fname']) && ($_POST['Lname']) && ($_POST['Password']))  
 {
-  $query = <<<END
-  INSERT INTO users(Fname,Lname,Email,Password)
-  VALUES ('{$_POST['Fname']}','{$_POST['Lname']}','{$_POST['Email']}','{$_POST['Password']}')
+  	$query = <<<END
+  	INSERT INTO users(Fname,Lname,Email,Password)
+  	VALUES ('{$_POST['Fname']}','{$_POST['Lname']}','{$_POST['Email']}','{$_POST['Password']}')
 END;
-$mysqli->query($query);
-header('Location:prototypes.php');
-}else{
-	echo "Fill out all of the fields";
+	$mysqli->query($query);
+	$query = <<<END
+	SELECT Email, Password, Fname, Userid FROM users
+  	WHERE Email = '{$_POST['Email']}'
+  	AND Password = '{$_POST['Password']}'
+END;
+	$res = $mysqli->query($query);
+  	if ($res->num_rows > 0) {
+    	$row = $res->fetch_object();
+    	$_SESSION["Fname"] = $row->Fname;
+    	$_SESSION["Userid"] = $row->Userid;
+    	header("Location:prototypes.php");
+	}
 }
+else
+	{
+		echo "Fill out all of the fields";
+	}
 
 ?>
 	</div>
@@ -56,7 +69,6 @@ header('Location:prototypes.php');
 		sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 	</div>
-</div>
 
 <?php
 	echo $footer;

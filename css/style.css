@@ -138,3 +138,6 @@ a:active {color:black; text-decoration:none; }
 	padding-top: 12px;
 }
 
+#register_form {
+	border-radius: 3px;
+}

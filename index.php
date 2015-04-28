@@ -43,9 +43,9 @@ $res = $mysqli->query($query);
     $row = $res->fetch_object();
     $_SESSION["Fname"] = $row->Fname;
     $_SESSION["Userid"] = $row->Userid;
-    header("Location:login.php");
+    header("Location:prototypes.php");
   }else{
-    echo "Fel användarnamn eller lösenord.";
+    echo "Wrong email or password, try again";
   }
 }
 ?>
@@ -61,7 +61,8 @@ $res = $mysqli->query($query);
     </div>
 
     <div id="middlecolumn">
-      <h2>Sign up!</h2>
+      <a href="new_user.php"><h2>Sign up!</h2></a>
+      <p> Not a registered user yet? There is still time! Press "Sign up!" above! Quickly!</p>
        </div>
 
      <div id="rightcolumn">

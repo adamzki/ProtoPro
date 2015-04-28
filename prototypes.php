@@ -11,7 +11,7 @@
 <body onload="MM_preloadImages('images/button-signout.jpg')">
   <div id="wrapper">
     <div id="header2"><center>
-      <a href="index.html"><img src="images/logo.png" width="225" height="50" border="0" /></a>
+      <a href="index.html"><img src="images/logo.png"></a>
     </center></div>
 
 <?php
