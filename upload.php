@@ -34,33 +34,24 @@ echo $navigation;
 
 <div id="leftcolumn">
   
-  <h4>Here you can upload any prototype within the Water category    </h4>
-  <h4>By pressing the upload button below<br />
-    you are about to share your design <br />
-    with the rest of this community</h4>
-  <h4>Other members will be able to look at<br />
-    and comment your prototype when <br />
-    clicking on the icon of your uploaded<br />
-    design. You will also be able to interact<br />
-    with other members.
-    <br />
-    <br />
-  </h4>
-  <center> 
-    <p><br />
-   </p>
-   <p><br />
- </p> </center>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p><br />
-     <br />
-   </p>
-   <p><img src="images/upload_bt.jpg" width="131" height="38" /></p>
-   <p><br />
-   </p>
-   <p>&nbsp;</p>
+  Here you will see your prototypes and can upload new ones.
+  By pressing the upload button below
+  you are about to share your design
+  with the rest of this community<br>
+  <br>
+  Other members will be able to look at 
+  and comment your prototype when clicking
+  on the icon of your uploaded design. <br>
+  <br>
+  You will also be able to interact
+  with other members.</h4>
+  
+  <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <h3>File:</h3>
+    <input type="file" name="image">
+    <br><br>
+    <input type="submit" value="Upload">
+  </form>
 
  </div>
 
@@ -75,7 +66,7 @@ echo $navigation;
   <p>&nbsp;</p>
  
  <center>
- <iframe src="scrollpic.html" width="500px" height="300px"></iframe>
+ <p>test</p>
  </center>
  
  
