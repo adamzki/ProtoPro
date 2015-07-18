@@ -1,4 +1,8 @@
-<?php include'template.php'; ?>
+<?php include'template.php';
+  if(!isset($_SESSION['Userid'])){
+  header("Location:index.php");
+}
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,13 +15,13 @@
 </script>
 </head>
 
-<body onload="MM_preloadImages('images/button-signout.jpg')">
+<body onload="MM_preloadpics('pics/button-signout.jpg')">
 
 <div id="wrapper">
 
 
 <div id="header2"><center>
-  <a href="index.html"><img src="images/logo.png" width="225" height="50" border="0" /></a>
+  <a href="index.html"><img src="pics/logo.png" width="225" height="50" border="0" /></a>
 </center></div>
 
 
@@ -27,10 +31,6 @@ echo $navigation;
 ?>
 
 <div id="maincontent">
-  
-  
- 
-
 
 <div id="leftcolumn">
   
@@ -45,25 +45,63 @@ echo $navigation;
   <br>
   You will also be able to interact
   with other members.</h4>
-  
-  <form action="upload.php" method="POST" enctype="multipart/form-data">
-    <h3>File:</h3>
+
+<?php
+
+    $form_upload = <<<END
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    <h3>Name:</h3>
+    <input type="text" name="name">
+    <h3>Description:</h3>
+    <textarea name="description" style="height:100px;width:250px;"></textarea>
+    <h3>Picture:</h3>
     <input type="file" name="image">
     <br><br>
-    <input type="submit" value="Upload">
+    <input type="submit" name="upload" value="Upload">
   </form>
+END;
 
+  echo $form_upload;
+ 
+    if(isset($_POST['upload'])){
+      $image_name = $_FILES['image']['name'];
+      $image_type = $_FILES['image']['type'];
+      $image_size = $_FILES['image']['size'];
+      $image_tmp_name = $_FILES['image']['tmp_name'];
+      $pic = file_get_contents($_FILES['image']['tmp_name']);
+
+
+      if($image_name == '' || $_POST['description'] == '' || $_POST['name'] == ''){
+        echo "<script>alert('Please enter the name of your prototype, a description and select an image to upload!')</script>";
+        exit(); 
+      }else{
+        $query = <<<END
+                INSERT INTO prototypes(name,description,pic,Userid)
+                VALUES ('{$_POST['name']}','{$_POST['description']}','$pic','{$_SESSION['Userid']}')
+END;
+      $mysqli->query($query); 
+      }
+    }
+
+    ?>
  </div>
 
 
 
 <div id="double-right-column">
-  <topleft>
-  <p><img src="images/tn_boat.jpg" width="72" height="72" class="floatleft" />WATER<br />
-    <br />
-    Prototypes in thsi category are objects such as boats, submarines, underwater drones and so on. </p>
-<p>&nbsp; </p>
-  <p>&nbsp;</p>
+
+  <?php
+    $query = <<<END
+      SELECT pic FROM prototypes
+      WHERE userid = '{$_SESSION['Userid']}'
+END;
+    $res = $mysqli->query($query);
+    if($res->num_rows > 0){
+      $row = $res->fetch_object();
+      $user_proto_image = $row->pic;
+      echo '<img src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'"/>';
+    }
+  ?>
  
  <center>
  <p>test</p>
