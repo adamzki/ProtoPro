@@ -48,38 +48,38 @@ echo $navigation;
 
 <?php
 
-    $form_upload = <<<END
-  <form action="upload.php" method="post" enctype="multipart/form-data">
-    <h3>Name:</h3>
-    <input type="text" name="name">
-    <h3>Description:</h3>
-    <textarea name="description" style="height:100px;width:250px;"></textarea>
-    <h3>Picture:</h3>
-    <input type="file" name="image">
-    <br><br>
-    <input type="submit" name="upload" value="Upload">
-  </form>
+  $form_upload = <<<END
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <h3>Name:</h3>
+      <input type="text" name="name">
+      <h3>Description:</h3>
+      <textarea name="description" style="height:100px;width:250px;"></textarea>
+      <h3>Picture:</h3>
+      <input type="file" name="image">
+      <br><br>
+      <input type="submit" name="upload" value="Upload">
+    </form>
 END;
 
   echo $form_upload;
- 
-    if(isset($_POST['upload'])){
-      $image_name = $_FILES['image']['name'];
-      $image_type = $_FILES['image']['type'];
-      $image_size = $_FILES['image']['size'];
-      $image_tmp_name = $_FILES['image']['tmp_name'];
-      $pic = file_get_contents($_FILES['image']['tmp_name']);
 
+  if(isset($_POST['upload'])){
+    $image_name = $_FILES['image']['name'];
+    $image_type = $_FILES['image']['type'];
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $pic = file_get_contents($_FILES['image']['tmp_name']);
 
-      if($image_name == '' || $_POST['description'] == '' || $_POST['name'] == ''){
-        echo "<script>alert('Please enter the name of your prototype, a description and select an image to upload!')</script>";
-        exit(); 
-      }else{
-        $query = <<<END
-                INSERT INTO prototypes(name,description,pic,Userid)
-                VALUES ('{$_POST['name']}','{$_POST['description']}','$pic','{$_SESSION['Userid']}')
+    if($image_name == '' || ($_POST['description']) == '' || ($_POST['name']) == '') {
+      echo "<script>alert('Please enter the name of your prototype, a description and select an image to upload!')</script>";
+      exit(); 
+    }else{
+      $query = <<<END
+        INSERT INTO prototypes(name,description,pic,Userid)
+        VALUES ('{$_POST['name']}','{$_POST['description']}','$pic','{$_SESSION['Userid']}')
 END;
-      $mysqli->query($query); 
+$mysqli->query($query);
+      echo "Your prototype has been uploaded and saved in our database!";
       }
     }
 
@@ -91,7 +91,7 @@ END;
 <div id="double-right-column">
 
   <?php
-    $query = <<<END
+     $query = <<<END
       SELECT pic FROM prototypes
       WHERE userid = '{$_SESSION['Userid']}'
 END;
