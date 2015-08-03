@@ -80,8 +80,8 @@ END;
 END;
 $mysqli->query($query);
       echo "Your prototype has been uploaded and saved in our database!";
-      }
-    }
+      
+    }}
 
     ?>
  </div>
@@ -92,14 +92,20 @@ $mysqli->query($query);
 
   <?php
      $query = <<<END
-      SELECT pic FROM prototypes
+      SELECT * FROM prototypes
       WHERE userid = '{$_SESSION['Userid']}'
 END;
     $res = $mysqli->query($query);
     if($res->num_rows > 0){
-      $row = $res->fetch_object();
-      $user_proto_image = $row->pic;
-      echo '<img src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'"/>';
+
+      while($row = $res->fetch_object()){
+        $user_proto_image = $row->pic;
+        $user_proto_name = $row->name;
+        $user_proto_desc = $row->description;
+        echo $user_proto_name;echo "<br>";
+        echo $user_proto_desc;echo "<br>";
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'" style="height: 300px;width:500px"/>';echo "<br>";
+      }
     }
   ?>
  
