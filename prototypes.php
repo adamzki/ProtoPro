@@ -1,29 +1,18 @@
-<?php include'template.php'; ?>
+<?php 
+  include'template.php';
+  echo $header;
+  ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>ProtoPro Login Page</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-</head>
+<div id="wrapper">
 
-<body onload="MM_preloadImages('images/button-signout.jpg')">
-  <div id="wrapper">
-    <div id="header2"><center>
-      <a href="index.html"><img src="images/logo.png"></a>
-    </center></div>
-
-<?php
-echo $navigation;
-?>
+<?php echo $navigation; ?>
 
 <div id="maincontent">
   <div id="leftcolumn">
     <h3>Welcome, <?php echo $_SESSION['Fname'] ?>!</h3>
       <center> 
-          <p><img src="images/tn_airplane.jpg" width="72" height="72" class="padtop12" /><br />
-         Air</p>
+          <p><a href="browse_users.php"><img src="images/pseudo_user_avatar.png" width="72" height="72" class="padtop12" /><br />
+         Browse prototypes by users</p></a>
           <p><img src="images/tn_boat.jpg" width="72" height="72" class="padtop12" /><br />
          Water</p>
           <p>&nbsp;</p>

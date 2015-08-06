@@ -10,23 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ProtoPro Category Page</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">
-
-</script>
 </head>
-
-<body onload="MM_preloadpics('pics/button-signout.jpg')">
 
 <div id="wrapper">
 
-
-<div id="header2"><center>
-  <a href="index.html"><img src="pics/logo.png" width="225" height="50" border="0" /></a>
-</center></div>
-
-
-
 <?php
+echo $header;
 echo $navigation;
 ?>
 

@@ -7,8 +7,11 @@ session_start();
 
 /* --------------- header för inloggad användare --------------- */
 $header = <<<END
+	<div id="wrapper">
+
+
 		<div id="header2"><center>
-		<a href="index.html"><img src="images/logo.png"></a>
+  			<a href="index.html"><img src="images/logo.png" width="225" height="50" border="0" /></a>
 		</center></div>
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,5 +76,6 @@ $footer = <<<END
 				</script>
 
 				| This site is copyrighted. All rights reserved 2014.</div>
+			</div>
 END;
 ?>
