@@ -22,7 +22,8 @@
            would like to upload your prototype <br />
            simply by clicking on the icon of your<br />
            choice</p>
-   <p><img src="images/button-signout.jpg" width="115" height="28" /></p>
+  <br><br>
+  <br><br>
 </div>
 
 <div id="middlecolumn">

@@ -43,7 +43,7 @@ $navigation = <<<END
 	<tr>
     <td width="301" align="center"><h2><a href="upload.php">My Page</a></h2></td>
     <td width="296" align="center"><h2><a href="prototypes.php">Prototypes</a></h2></td>
-    <td width="303" align="center"><h2><a href="chatindex.php">Forum</a></h2></td>
+    <td width="303" align="center"><h2><a href="forum">Forum</a></h2></td>
 
 
 END;
