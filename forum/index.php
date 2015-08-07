@@ -1,4 +1,8 @@
 <?php
+
+include'template.php';
+echo $header;
+echo $navigation;
 /**
 *
 * This file is part of the phpBB Forum Software package.
