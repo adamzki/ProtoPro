@@ -60,22 +60,6 @@ $navigation .= '</tr></table></div>';
 
 /* --------------- footer finns på varje sida --------------- */
 $footer = <<<END
-				<div id="footer">
-				<button onclick="terms()">Terms and conditions</button>
-				<script>
-				function terms() {
-				alert("hmmmm");
-				}
-				</script>
-
-				<button onclick="myFunction()">Contact</button>
-				<script>
-				function myFunction() {
-				alert("Högskolan i Halmstad");
-				}
-				</script>
-
-				| This site is copyrighted. All rights reserved 2014.</div>
-			</div>
+				<div id="footer"><a href="#" target="_blank">Terms and conditions</a> | <a href="#">Contact</a> | This site is copyrighted. All rights reserved 2014.</div>
 END;
 ?>

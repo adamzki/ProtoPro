@@ -25,22 +25,22 @@ END;
 						}else{
 							$select_id = $user_one;
 						}
-						$query = <<<END
-							SELECT Fname, Lname FROM users
+						$query2 = <<<END
+							SELECT * FROM users
 							WHERE Userid = $select_id
 END;
-						$res = $mysqli->query($query);
-						if($res->num_rows > 0){
-							while ($row = $res->fetch_object()){
-								echo "<a href='conversations.php?hash=$hash'>" . $row->Fname . " " . $row->Lname . "</a>";
-							}
-						}
+						$res2 = $mysqli->query($query2);
+						$row2 = $res2->fetch_object();
+							echo "<a href='conversations.php?hash=$hash'>" . $row2->Fname . " " . $row2->Lname . "</a><br><hr>";
+						
 					}
-				}
+}
+						
+				
 			?>
 		</div>
 		<div id="double-right-column">
-			<h3>DOUBLE-RIGHT-COLUM</h3>
+			<h3>Selected Conversation:</h3>
 			<?php
 			if(isset($_GET['hash'])){
 				$query = <<<END
@@ -49,13 +49,44 @@ END;
 END;
 				$res = $mysqli->query($query);
 					while ($row = $res->fetch_object()){
-					echo $row->message;
+						$query3 = <<<END
+						SELECT * FROM users
+						WHERE Userid = $row->from_id
+END;
+				$res3 = $mysqli->query($query3);
+				while($row3 = $res3->fetch_object()){
+					echo "<b>" . $row3->Fname . " says: </b>" . $row->message . "<br>";
 				}
+				}
+
+				?>
+
+				<br><br><form method="POST">
+				<?php
+					if (isset($_POST['message'])) {
+						$query = <<<END
+						INSERT INTO messages (group_hash,from_id,message)
+						VALUES ('{$_GET['hash']}','{$_SESSION['Userid']}','{$_POST['message']}')
+END;
+					$mysqli->query($query);
+					header("Location:conversations.php?hash={$_GET['hash']}");
+					}
+				?>
+					Enter your reply:<br>
+					<textarea name="message" rows="6" cols="50"></textarea>
+					<br>
+					<input type="submit" value="Send reply">
+				</form>
+
+				<?php
 			}else{
 				echo "Select a conversation to the left.";
 			}
+
+
 			?>
 		</div>
+
 	</div>
 	<?php echo $footer; ?>
 </div>

@@ -56,7 +56,7 @@ a:active {color:black; text-decoration:none; }
 
 #maincontent {
 	width: 900px;
-	height: auto;
+	min-height: 500px;
 	background-color: #FFFFFF;
 	margin-top: 24px;
 	box-shadow: 4px 5px 5px #999999;
@@ -136,3 +136,10 @@ a:active {color:black; text-decoration:none; }
 	padding-top: 12px;
 }
 
+#prototype_img {
+	display: block;
+	max-width: 500px;
+	max-height: 350px;
+	width: auto;
+	height: auto;
+}

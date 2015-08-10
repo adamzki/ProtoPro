@@ -7,7 +7,6 @@
 
 <?php	echo $navigation; ?>
 <div id="maincontent">
-	<p>MAINCONTENT</p>
 	<div id="leftcolumn">
 		<h3>This Protopro:er goes by...</h3>
 		<?php
@@ -42,12 +41,13 @@ END;
               $user_proto_desc = $row->description;
               echo "<h3>Prototype name:</h3>" . $user_proto_name;
               echo "<h3>Description:</h3>" . $user_proto_desc;
-              echo '<img src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'" style="height: 300px;width:500px"/>';echo "<br><hr>";
+              echo '<img id="prototype_img" src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'"/>';echo "<br><hr>";
             }
           }
       ?>
  </div>
 
-<?php	echo $footer; ?>
+
 
 </div>
+<?php	echo $footer; ?>
