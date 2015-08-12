@@ -7,7 +7,7 @@
 <?php echo $navigation; ?>
 	<div id="maincontent">
 		<div id="leftcolumn">
-			<h3>Active conversations</h3><br>
+			<h2>Active conversations</h2><br>
 			<?php
 				$query = <<<END
 					SELECT * FROM message_group
@@ -40,7 +40,7 @@ END;
 			?>
 		</div>
 		<div id="double-right-column">
-			<h3>Selected Conversation:</h3>
+			<h2>Selected Conversation:</h2>
 			<?php
 			if(isset($_GET['hash'])){
 				$query = <<<END

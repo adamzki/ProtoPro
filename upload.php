@@ -27,7 +27,7 @@
       on the icon of your uploaded design. <br>
       <br>
       You will also be able to interact
-      with other members.<a href="conversations.php">Click here to see your inbox</a></h4>
+      with other members.<br><br><a href="conversations.php">Click here to see your inbox</a></h4>
 
       <?php
 
@@ -71,23 +71,20 @@ END;
     <div id="double-right-column">
 
       <?php
-         $query = <<<END
-          SELECT * FROM prototypes
-          WHERE userid = '{$_SESSION['Userid']}'
+  $query = <<<END
+      SELECT * FROM prototypes
+      WHERE Userid = {$_SESSION['Userid']}
+      ORDER BY timestamp DESC
 END;
-          $res = $mysqli->query($query);
-          if($res->num_rows > 0){
+  $res = $mysqli->query($query);
+  if($res->num_rows > 0){
+    while($row = $res->fetch_object()){
+      echo '<div id="category_frame"><a href="specific_prototype.php?protoid=' . $row->protoid . '"><img id="catogory_img" src="data:image/jpeg;base64,'.base64_encode($row->pic).'"><br>';
+      echo $row->name . "</a></div>";
+    }
+  }
 
-            while($row = $res->fetch_object()){
-              $user_proto_image = $row->pic;
-              $user_proto_name = $row->name;
-              $user_proto_desc = $row->description;
-              echo "<h3>Prototype name:</h3>" . $user_proto_name;
-              echo "<h3>Description:</h3>" . $user_proto_desc;
-              echo '<img id="prototype_img" src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'"/>';echo "<br><hr>";
-            }
-          }
-      ?>
+?>
 
     </div>
   </div>
