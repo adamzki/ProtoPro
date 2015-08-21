@@ -8,6 +8,7 @@ echo $navigation;
     <h3>Latest added topics!</h3>
   </div>
   <div id="double-right-column">
+    <h2><center>Forum</center>
     <h3>Categories</h3>
     
     <?php
@@ -22,7 +23,8 @@ END;
         }
       }
     ?>
-    
+  </div>
+    <?php include'footer.php';?>
   </div>
 </div>
 

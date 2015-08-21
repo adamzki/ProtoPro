@@ -16,7 +16,12 @@
   <div id="maincontent">
 
     <div id="leftcolumn">
-  
+<h3>Inbox</h3>
+      By pressing the button below, you will access your inbox. From here you can check 
+      your conversations with fellow prototypers
+<a href="conversations.php"><img src="images/email.jpg" id="catogory_img" /></a>
+       
+     <h3>Upload your prototype</h3>
       Here you will see your prototypes and can upload new ones.
       By pressing the upload button below
       you are about to share your design
@@ -27,7 +32,8 @@
       on the icon of your uploaded design. <br>
       <br>
       You will also be able to interact
-      with other members.<br><br><a href="conversations.php">Click here to see your inbox</a></h4>
+      with other members. 
+      
 
       
 
@@ -78,7 +84,7 @@ END;
             ?>
     </div>
     <div id="double-right-column">
-
+      <h2><center>My Page</center><h2>
       <?php
   $query = <<<END
       SELECT * FROM prototypes
@@ -96,8 +102,9 @@ END;
 ?>
 
     </div>
+    <?php include'footer.php';?>
   </div>
-<?php echo $footer; ?>
+
 </div>
 
 </body>

@@ -86,7 +86,7 @@ END;
 
 			?>
 		</div>
-
+		<div>
+<?php include'footer.php';?></div>
 	</div>
-	<?php echo $footer; ?>
 </div>

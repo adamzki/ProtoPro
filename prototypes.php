@@ -8,10 +8,8 @@
 <?php echo $navigation; ?>
 
 <div id="maincontent">
-  <div id="leftcolumn">     
-     <h2>Latest prototypes</h2>
-    <br><br>
-    <br><br>
+  <div id="leftcolumn">    
+     <h3>Latest prototypes</h3>
     <?php
       $query = <<<END
       SELECT * FROM prototypes
@@ -32,7 +30,8 @@ END;
 </center></div>
 
 <div id="double-right-column">
-  <h2>Categories</h2>
+  <h2><center>Prototypes</center></h2>
+ 
 
 <?php
   $query = <<<END
@@ -52,9 +51,9 @@ END;
         Browse users
       </a>
       </div>
-
+<?php include'footer.php';?>
 </div>
-<div id="footer"><a href="#" target="_blank">Terms and conditions</a> | <a href="#">Contact</a> | This site is copyrighted. All rights reserved 2014.</div>
+</div>
 
 </body>
 </html>

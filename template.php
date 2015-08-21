@@ -49,7 +49,7 @@ $navigation = <<<END
 END;
 if (isset($_SESSION['Userid'])) {
 	$navigation .= <<<END
-	<td width="300" align="center"><h2><a href="logout.php">Logout</a></h2></td>
+	<td width="300" align="center"><h2><a href="logout.php"><font color="blue"><img src="images/logout.png" id="catogory_img" /></h2></td>
 END;
 }
 else
