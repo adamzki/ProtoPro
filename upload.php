@@ -71,11 +71,11 @@ END;
                 $pic = file_get_contents($_FILES['image']['tmp_name']);
 
               if(isset($image_name)){
-                $query = <<<END
-                INSERT INTO prototypes (name,description,pic,userid,cat_id)
+                $query2 = <<<END
+                INSERT INTO prototypes (name,description,pic,Userid,cat_id)
                 VALUES ('{$_POST['name']}', '{$_POST['description']}', '{$pic}', '{$_SESSION['Userid']}', '{$cat_id}')
 END;
-              $mysqli->query($query);
+              $mysqli->query($query2);
               echo "Your prototype has been uploaded and stored in our database!";
               }else{
                 echo "Fill out all fields to upload a prototype";
