@@ -90,17 +90,15 @@ END;
 END;
       $mysqli->query($query);
       // header("Location:specific_prototype.php?protoid={$_GET['protoid']}");
-    }
-    ?>
-    <textarea name="comment" cols="60" rows="5"></textarea><br><br>
-    <input type="submit" value="Submit">
-  </form>
+        }
+        ?>
+        <textarea name="comment" cols="60" rows="5"></textarea><br><br>
+        <input type="submit" value="Submit">
+      </form>
 
-</div>
-</div>
-<div id="footer"><a href="#" target="_blank">Terms and conditions</a> | <a href="#">Contact</a> | This site is copyrighted. All rights reserved 2014.</div>
-
-</body>
+    </div>
+    </div>
+  </body>
 </html>
 
 

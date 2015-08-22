@@ -24,7 +24,7 @@ include'template.php';
 <div id="wrapper">
   <div id="header"><a href="index.php"><img src="images/logo.png" /></a>
     <div id="loginmain">
-      <a href="#" target="_blank">Forgot password?</a>
+      <a>Forgot password?</a>
         <form name="login" actions="index.php" method="post">
           <input type="text" name="Email" placeholder="Email" />
           <input type="password" name="Password" placeholder="Password" />

@@ -71,6 +71,6 @@ else
 	</div>
 
 <?php
-	echo $footer;
+	
 ?>
 </div>

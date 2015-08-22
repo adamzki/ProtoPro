@@ -61,9 +61,6 @@ END;
 
 ?>
       </div>
-</div>
-<div id="footer"><a href="#" target="_blank">Terms and conditions</a> | <a href="#">Contact</a> | This site is copyrighted. All rights reserved 2014.</div>
-
 </body>
 </html>
 

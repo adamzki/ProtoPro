@@ -21,6 +21,12 @@
       your conversations with fellow prototypers
 <a href="conversations.php"><img src="images/email.jpg" id="catogory_img" /></a>
        
+<br><h3>Members</h3>
+       By pressing the icon below, you will access other members of this site. From here you can contact fellow prototypers, and see 
+       their prototypes.</br>
+
+ <a href="browse_users.php"><img src="images/pseudo_user_avatar.png" id="catogory_img" /></a>
+
      <h3>Upload your prototype</h3>
       Here you will see your prototypes and can upload new ones.
       By pressing the upload button below
@@ -100,7 +106,7 @@ END;
   }
 
 ?>
-
+      </a>
     </div>
     <?php include'footer.php';?>
   </div>

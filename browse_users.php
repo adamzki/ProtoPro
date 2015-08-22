@@ -7,7 +7,7 @@
 
 <?php	echo $navigation; ?>
 <div id="maincontent">
-	<p>MAINCONTENT</p>
+	<h2><center>Members</center></h2>
 	<div id="leftcolumn">
 		<p>Here are the registered Protopro:ers</p>
 		<?php
@@ -28,7 +28,4 @@ END;
 <div id="double-right-column">
 
  </div>
-
-<?php	echo $footer; ?>
-
 </div>

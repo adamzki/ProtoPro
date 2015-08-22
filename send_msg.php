@@ -7,8 +7,9 @@
 
 <?php	echo $navigation; ?>
 <div id="maincontent">
-	<p>MAINCONTENT</p>
+	<h2><center>Send message</center></h2>
 	<div id="leftcolumn">
+		<img src="images/letter.png" id="catogory_img" /></a>
 		<?php
 			$query = <<<END
 				SELECT * FROM users
@@ -61,7 +62,4 @@ END;
 
   
  </div>
-
-<?php	echo $footer; ?>
-
 </div>

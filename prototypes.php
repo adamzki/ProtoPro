@@ -30,7 +30,7 @@ END;
 </center></div>
 
 <div id="double-right-column">
-  <h2><center>Prototypes</center></h2>
+  <h2><center>Prototypes</center><h3><center>Categories</center></h3>
  
 
 <?php
@@ -47,9 +47,6 @@ END;
   }
 
 ?>
-      <a href="browse_users.php"><img src="images/pseudo_user_avatar.png" id="catogory_img" /><br>
-        Browse users
-      </a>
       </div>
 <?php include'footer.php';?>
 </div>

@@ -7,7 +7,7 @@
 <?php echo $navigation; ?>
 	<div id="maincontent">
 		<div id="leftcolumn">
-			<h2>Active conversations</h2><br>
+			<h2><center>Inbox</center></h2><br>
 			<?php
 				$query = <<<END
 					SELECT * FROM message_group
@@ -86,7 +86,6 @@ END;
 
 			?>
 		</div>
-		<div>
-<?php include'footer.php';?></div>
+		
 	</div>
 </div>
