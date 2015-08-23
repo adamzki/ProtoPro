@@ -41,7 +41,7 @@ END;
               $user_proto_desc = $row->description;
               echo "<h3>Prototype name:</h3>" . $user_proto_name;
               echo "<h3>Description:</h3>" . $user_proto_desc;
-              echo '<img id="prototype_img" src="data:image/jpeg;base64,'.base64_encode($user_proto_image).'"/>';echo "<br><hr>";
+              echo '<img id="protortype_img" src="' . $row->pic . '"><br>';
             }
           }
       ?>
