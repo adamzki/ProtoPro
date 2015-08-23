@@ -9,7 +9,7 @@ echo $navigation;
   </div>
   <div id="double-right-column">
     <h2><center>Forum</center>
-    <h3>Categories</h3>
+    <h3><center>Categories</center></h3>
     
     <?php
       $query = <<<END

@@ -9,7 +9,8 @@
 <div id="maincontent">
 	<h2><center>Members</center></h2>
 	<div id="leftcolumn">
-		<p>Here are the registered Protopro:ers</p>
+		<p>Here are the registered members.
+			Chose a member to start interact with that person.</p>
 		<?php
 			$query = <<<END
 				SELECT * FROM users

@@ -33,7 +33,6 @@ $header2 = <<<END
 		<div id="wrapper">
 			<div id="header"><a href="index.php"><img src="images/logo.png" /></a>
 				<div id="loginmain">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor.</p>
 				</div>
 			</div>
 END;
