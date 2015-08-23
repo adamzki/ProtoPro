@@ -59,12 +59,9 @@ END;
                 $res = $mysqli->query($query);
                 for ($i=1; $i < 5; $i++) { 
                 $row = $res->fetch_object();
-
-                  echo "<option value='{$row->name}'> $row->name";
-                  echo "<input type='hidden' name='cat_id' value='$cat_id+$i'>";
-                  
-                    
-                  
+                  $cat_id =+$i;
+                  echo "<option value='$cat_id'> $row->name";
+                  //echo "<input type='hidden' name='cat_id' value='$cat_id+$i'>";
                   }
                 
               ?>
@@ -77,17 +74,18 @@ END;
           </form>
 
 <?php
-  $target_dir = "uploads/";
+if(isset($_POST['upload'])){
+$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+if(isset($_POST["upload"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
-        $image_name = $_FILES['image']['name'];
+        $image_name = $_FILES['fileToUpload']['name'];
         
     } else {
         echo "File is not an image.";
@@ -118,13 +116,14 @@ if ($uploadOk == 0) {
 END;
       $query = <<<END
       INSERT INTO prototypes(name,description,Userid,cat_id,pic)
-      VALUES ('{$_POST['name']}','{$_POST['description']}','{$_SESSION['Userid']}','{$_POST['cat_id']}','uploads/{$image_tmp_name}')
+      VALUES ('{$_POST['name']}','{$_POST['description']}','{$_SESSION['Userid']}','{$_POST['category']}','uploads/{$image_tmp_name}')
 END;
       $mysqli->query($query);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
+}
 }
 ?>
     </div>
