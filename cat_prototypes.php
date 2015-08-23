@@ -22,7 +22,7 @@ END;
       if($res->num_rows > 0){
         for ($i=0; $i < 3; $i++) { 
           while($row = $res->fetch_object()){
-            echo '<div id="category_frame_latest"><a href=""><img id="catogory_img" src="data:image/jpeg;base64,'.base64_encode($row->pic).'"><br>';
+            echo '<div id="category_frame"><a href="specific_prototype.php?protoid=' . $row->protoid . '"><img id="catogory_img" src="' . $row->pic . '"><br>';
             echo $row->name . "<br></a></div>";
           }
         }
@@ -54,7 +54,7 @@ END;
   $res = $mysqli->query($query);
   if($res->num_rows > 0){
     while($row = $res->fetch_object()){
-      echo '<div id="category_frame"><a href="specific_prototype.php?protoid=' . $row->protoid . '"><img id="catogory_img" src="data:image/jpeg;base64,'.base64_encode($row->pic).'"><br>';
+      echo '<div id="category_frame"><a href="specific_prototype.php?protoid=' . $row->protoid . '"><img id="catogory_img" src="' . $row->pic . '"><br>';
       echo $row->name . "</a></div>";
     }
   }

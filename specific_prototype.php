@@ -22,7 +22,7 @@ END;
       while($row = $res->fetch_object()){
         echo "<b>Name: </b>" . $row->name . "<br><br>";
         echo "<b>Description: </b>" . $row->description;
-        $pic = $row->pic;
+        $pic = '<img id="prototype_img" src="' . $row->pic . '"><br>';
         $query = <<<END
         SELECT * FROM users
         WHERE Userid = $row->Userid
@@ -56,9 +56,7 @@ END;
 <div id="double-right-column">
   <h2> Pictures</h2>
   <?php
-  echo '<img id="prototype_img" src="data:image/jpeg;base64,'.base64_encode($pic).'"><b>Comments:</b><hr>';
-
-
+  echo $pic;
   $query = <<<END
   SELECT * FROM comments
   WHERE protoid = {$_GET['protoid']}
