@@ -8,7 +8,7 @@
 <?php	echo $navigation; ?>
 <div id="maincontent">
 	<div id="leftcolumn">
-		<h3>This Protopro:er goes by...</h3>
+		<h3>This member goes by...</h3>
 		<?php
 			$query = <<<END
 				SELECT * FROM users

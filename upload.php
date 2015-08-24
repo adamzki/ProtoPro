@@ -18,27 +18,25 @@
     <div id="leftcolumn">
 <h3>Inbox</h3>
       By pressing the button below, you will access your inbox. From here you can check 
-      your conversations with fellow prototypers
+      your conversations with fellow members.
 <a href="conversations.php"><img src="images/email.jpg" id="catogory_img" /></a>
        
 <br><h3>Members</h3>
-       By pressing the icon below, you will access other members of this site. From here you can contact fellow prototypers, and see 
-       their prototypes.</br>
+       By pressing the icon below, you will access other members of this site. From here you can contact and send them a message, and also see their prototypes.</br>
 
  <a href="browse_users.php"><img src="images/pseudo_user_avatar.png" id="catogory_img" /></a>
 
      <h3>Upload your prototype</h3>
-      Here you will see your prototypes and can upload new ones.
+      On My Page you will be able to see your prototypes and can upload new ones.
       By pressing the upload button below
       you are about to share your design
-      with the rest of this community<br>
+      with the rest of this community. Just don't forget to chose a category when uploading.<br>
       <br>
       Other members will be able to look at 
       and comment your prototype when clicking
-      on the icon of your uploaded design. <br>
+      on the icon of your uploaded design.<br>
       <br>
-      You will also be able to interact
-      with other members. 
+      
       
 
       
